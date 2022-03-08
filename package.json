@@ -1,0 +1,26 @@
+{
+  "name": "graphql-dynamodb",
+  "version": "1.0.0",
+  "description": "<!-- title: 'AWS NodeJS Example' description: 'This template demonstrates how to deploy a NodeJS function running on AWS Lambda using the traditional Serverless Framework.' layout: Doc framework: v2 platform: AWS language: nodeJS priority: 1 authorLink: 'https://github.com/serverless' authorName: 'Serverless, inc.' authorAvatar: 'https://avatars1.githubusercontent.com/u/13742415?s=200&v=4' -->",
+  "main": "handler.js",
+  "dependencies": {
+    "apollo-server-lambda": "^3.6.3",
+    "dynamoose": "^2.8.5",
+    "graphql": "^16.3.0"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.1088.0",
+    "nodemon": "^2.0.15",
+    "serverless": "^3.7.2",
+    "serverless-dynamodb-local": "^0.2.40",
+    "serverless-offline": "^8.5.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "IS_LOCAL=true nodemon --exec sls offline start",
+    "deploy:hml": "sls deploy --verbose -s hml",
+    "remove:hml": "sls remove --verbose -s hml"
+  },
+  "author": "",
+  "license": "ISC"
+}
