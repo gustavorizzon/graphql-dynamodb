@@ -11,10 +11,13 @@ const SkillsFactory = require('./src/core/factories/SkillsFactory')
 const schema = require('./src/graphql');
 
 const isLocal = process.env.IS_LOCAL === 'true';
-console.log(process.env.IS_LOCAL)
 
 const server = new ApolloServer({
   schema,
+	context: async () => ({
+		Heroes: await HeroesFactory.createInstance(),
+		Skills: await SkillsFactory.createInstance(),
+	}),
 	introspection: isLocal,
   formatError(error) {
 		console.error('[Global Error Logger]', error);

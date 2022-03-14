@@ -1,10 +1,15 @@
+const { randomUUID } = require('crypto');
+
 class BaseService {
 	constructor({ repository }) {
 		this.repository = repository
 	}
 
 	async create(item) {
-		return this.repository.create(item)
+		return this.repository.create({
+			id: randomUUID(),
+			...item
+		})
 	}
 
 	async findOne(id) {
