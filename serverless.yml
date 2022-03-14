@@ -53,12 +53,6 @@ provider:
             - "arn:aws:dynamodb:${self:provider.region}:*:table/${self:provider.environment.SKILLS_TABLE}"
 
 functions:
-  test:
-    handler: graphql.test
-    events:
-      - http:
-          path: test
-          method: any
   graphql:
     handler: graphql.handler
     events:
